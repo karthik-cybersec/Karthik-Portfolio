@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Karthikeyan M — Cybersecurity Analyst and Security Operations portfolio">
+<title>Karthikeyan M | Security Engineer Portfolio</title>
+<style>
+:root{--bg:#050912;--panel:#0b1320;--panel2:#101b2b;--text:#eaf2ff;--muted:#91a0b7;--line:#1d2b40;--accent:#5eead4;--accent2:#60a5fa;--shadow:0 25px 70px rgba(0,0,0,.35)}
+body.light{--bg:#eef4f8;--panel:#fff;--panel2:#f3f7fb;--text:#122033;--muted:#53657c;--line:#d6e0ea;--shadow:0 20px 55px rgba(29,55,80,.12)}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 80% 0%,rgba(25,130,120,.18),transparent 30%),radial-gradient(circle at 10% 25%,rgba(35,100,190,.12),transparent 25%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6;transition:.35s}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;background-image:linear-gradient(rgba(96,165,250,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(96,165,250,.13) 1px,transparent 1px);background-size:45px 45px;mask-image:linear-gradient(to bottom,black,transparent 75%)}
+a{color:inherit;text-decoration:none}.container{width:min(1140px,92%);margin:auto}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:900;letter-spacing:.08em}.logo span{color:var(--accent)}
+.links{display:flex;gap:24px;color:var(--muted);font-size:13px}.links a:hover{color:var(--accent)}
+.toggle{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:9px;padding:8px 11px;cursor:pointer}
+.hero{min-height:78vh;padding:100px 0 35px;display:grid;align-items:center}.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.kicker{color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;display:flex;gap:9px;align-items:center}.dot{width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 20px var(--accent);animation:pulse 1.5s infinite}
+h1{font-size:clamp(48px,7vw,86px);line-height:.94;letter-spacing:-.06em;margin:22px 0;animation:reveal .9s both}h1 .accent{color:var(--accent)}.typing{color:var(--accent2);min-height:1.2em;font-size:clamp(18px,2.5vw,26px);font-weight:800}.lead{font-size:18px;color:var(--muted);max-width:700px}
+.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:28px}.btn{padding:12px 17px;border:1px solid var(--line);border-radius:10px;background:var(--panel);font-weight:750;font-size:13px;transition:.25s}.btn:hover{transform:translateY(-3px);border-color:var(--accent)}.btn.primary{background:var(--accent);color:#04120f;border-color:var(--accent)}
+.hero-art{position:relative;min-height:380px;display:grid;place-items:center}.orb{position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(94,234,212,.22),rgba(96,165,250,.06) 42%,transparent 70%);border:1px solid rgba(94,234,212,.18);animation:float 5s ease-in-out infinite}
+.robot{font-size:160px;filter:drop-shadow(0 0 25px rgba(94,234,212,.25));animation:robotFloat 4s ease-in-out infinite;z-index:2}.scan{position:absolute;width:300px;height:2px;background:var(--accent);box-shadow:0 0 20px var(--accent);animation:scan 3s ease-in-out infinite;z-index:3}
+.badge{position:absolute;background:var(--panel);border:1px solid var(--line);padding:9px 12px;border-radius:10px;font:11px ui-monospace,monospace;box-shadow:var(--shadow);z-index:4}.b1{top:50px;right:0}.b2{bottom:65px;left:0}.b3{top:145px;left:10px}
+section{padding:90px 0;border-top:1px solid var(--line)}.eyebrow{font-size:11px;color:var(--accent);font-weight:900;letter-spacing:.16em;text-transform:uppercase}.section-head{margin-bottom:35px}h2{font-size:38px;line-height:1.05;letter-spacing:-.04em;margin:8px 0}.section-head p{color:var(--muted);max-width:760px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:17px;padding:23px;transition:.3s}.card:hover{transform:translateY(-6px);border-color:rgba(94,234,212,.5);box-shadow:var(--shadow)}.card h3{margin:0 0 7px}.card p{color:var(--muted);font-size:14px}
+.timeline{border-left:1px solid var(--line);margin-left:8px}.job{position:relative;padding:0 0 38px 30px}.job:before{content:"";position:absolute;left:-5px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}.date{font:11px ui-monospace,monospace;color:var(--accent)}.job h3{margin:5px 0}.job p,.job li{color:var(--muted);font-size:14px}
+.skills{display:flex;flex-wrap:wrap;gap:9px}.skill{padding:9px 12px;background:var(--panel);border:1px solid var(--line);border-radius:9px;color:var(--text);font-size:13px;transition:.25s}.skill:hover{color:var(--accent);transform:translateY(-2px)}
+.tool-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.tool{position:relative;overflow:hidden;min-height:150px}.tool-icon{font-size:43px;display:block;margin-bottom:10px;filter:drop-shadow(0 0 12px rgba(94,234,212,.22));animation:toolFloat 3s ease-in-out infinite}.tool:nth-child(2) .tool-icon{animation-delay:.3s}.tool:nth-child(3) .tool-icon{animation-delay:.6s}.tool:nth-child(4) .tool-icon{animation-delay:.9s}
+.tool small{color:var(--muted)}.tool:after{content:"";position:absolute;left:-100%;bottom:0;width:100%;height:2px;background:var(--accent);animation:progress 4s linear infinite}
+.projects{display:grid;gap:15px}.project{display:grid;grid-template-columns:70px 1fr;gap:15px;align-items:start}.num{font:800 12px ui-monospace;color:var(--accent);padding-top:4px}.project h3{margin:0}.project p{color:var(--muted);font-size:14px;margin:4px 0}.tag{display:inline-block;border:1px solid #25514a;color:var(--accent);border-radius:999px;padding:4px 8px;font-size:10px;margin:4px 4px 0 0}
+.contact{display:flex;justify-content:space-between;gap:30px;align-items:center;padding:32px;background:linear-gradient(135deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:20px}.contact p{color:var(--muted)}.contact-links{display:flex;gap:10px;flex-wrap:wrap}
+footer{padding:35px 0;text-align:center;color:var(--muted);font-size:12px}
+.reveal{opacity:0;transform:translateY(22px);transition:.7s}.reveal.show{opacity:1;transform:none}
+@keyframes reveal{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}@keyframes pulse{50%{opacity:.35;transform:scale(.65)}}@keyframes float{50%{transform:scale(1.04) translateY(-8px)}}}@keyframes scan{0%,100%{transform:translateY(-125px);opacity:.2}50%{transform:translateY(125px);opacity:.9}}@keyframes toolFloat{50%{transform:translateY(-6px)}}@keyframes progress{to{left:100%}}
+
+.cyber-robot{position:relative;width:270px;height:350px;z-index:3;animation:cyberFloat 4s ease-in-out infinite;filter:drop-shadow(0 0 25px rgba(82,168,255,.18))}
+.r-head{position:absolute;left:72px;top:15px;width:126px;height:92px;border:2px solid var(--blue);border-radius:42px 42px 34px 34px;background:linear-gradient(145deg,#17283d,#050910);box-shadow:inset 0 0 22px rgba(79,255,225,.08),0 0 22px rgba(82,168,255,.18)}
+.r-visor{position:absolute;left:18px;top:34px;width:86px;height:18px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px var(--cyan);animation:visorPulse 1.8s infinite}
+.r-head i{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--blue);top:15px}.r-head i:first-of-type{left:17px}.r-head i:last-of-type{right:17px}
+.r-neck{position:absolute;left:121px;top:103px;width:28px;height:22px;border:2px solid var(--blue);background:#09111c}
+.r-body{position:absolute;left:43px;top:116px;width:184px;height:145px;border:2px solid var(--blue);border-radius:42px 42px 25px 25px;background:linear-gradient(145deg,#172b40,#070b13);box-shadow:inset 0 0 35px rgba(79,255,225,.05)}
+.r-core{position:absolute;left:56px;top:34px;width:68px;height:52px;border:1px solid var(--cyan);border-radius:12px;display:grid;place-items:center;text-align:center;color:var(--cyan);font:700 9px/1.25 monospace;box-shadow:0 0 20px rgba(79,255,225,.15)}
+.r-line{position:absolute;left:28px;right:28px;bottom:24px;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);box-shadow:0 0 10px var(--cyan)}
+.r-arm{position:absolute;top:133px;width:43px;height:112px;border:2px solid var(--blue);border-radius:25px;background:#09111b}.r-left{left:7px;transform:rotate(12deg)}.r-right{right:7px;transform:rotate(-12deg)}
+.r-hand{position:absolute;top:235px;width:35px;height:35px;border:2px solid var(--cyan);border-radius:50%;background:#09111b}.r-hl{left:0}.r-hr{right:0}
+.r-leg{position:absolute;top:255px;width:53px;height:73px;border:2px solid var(--blue);border-radius:13px;background:#09111b}.r-ll{left:70px}.r-lr{right:70px}
+.r-foot{position:absolute;top:318px;width:67px;height:22px;border:2px solid var(--blue);border-radius:10px;background:#09111b}.r-fl{left:57px}.r-fr{right:57px}
+.bot-status{position:absolute;bottom:5px;color:var(--cyan);font:700 10px monospace;letter-spacing:.12em;text-align:center}
+@keyframes cyberFloat{50%{transform:translateY(-12px) rotate(.6deg)}}@keyframes visorPulse{50%{opacity:.55;box-shadow:0 0 7px var(--cyan)}}
+
+
+
+
+/* Cyber security shield hero visual */
+.cyber-shield{position:relative;width:430px;height:430px;display:grid;place-items:center;animation:shieldFloat 5s ease-in-out infinite}
+.shield-ring{position:absolute;width:310px;height:310px;border:1px solid rgba(79,255,225,.24);border-radius:50%;box-shadow:0 0 70px rgba(79,255,225,.10),inset 0 0 45px rgba(82,168,255,.08);animation:ringSpin 14s linear infinite}
+.shield{position:relative;width:185px;height:215px;clip-path:polygon(50% 0,91% 15%,91% 57%,75% 82%,50% 100%,25% 82%,9% 57%,9% 15%);background:linear-gradient(145deg,var(--cyan),var(--blue));display:grid;place-items:center;filter:drop-shadow(0 0 22px rgba(79,255,225,.45));animation:shieldPulse 3s ease-in-out infinite}
+.shield:after{content:"";position:absolute;inset:4px;clip-path:inherit;background:linear-gradient(145deg,#0d2634,#07111d 72%);z-index:0}
+.shield-lock{position:relative;z-index:2;width:58px;height:62px;border:3px solid var(--cyan);border-radius:10px;margin-top:5px;box-shadow:0 0 20px rgba(79,255,225,.35)}
+.shield-lock:before{content:"";position:absolute;left:13px;top:-27px;width:26px;height:31px;border:3px solid var(--cyan);border-bottom:0;border-radius:16px 16px 0 0}
+.shield-lock span{position:absolute;left:23px;top:25px;width:9px;height:15px;background:var(--cyan);border-radius:5px;box-shadow:0 0 12px var(--cyan)}
+.shield-scan{position:absolute;z-index:3;left:22px;right:22px;height:2px;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:shieldScan 2.5s ease-in-out infinite}
+.shield-orbit{position:absolute;border:1px dashed rgba(82,168,255,.45);border-radius:50%;animation:ringSpin 9s linear infinite}
+.o1{width:355px;height:160px;transform:rotate(28deg)}.o2{width:160px;height:355px;transform:rotate(-28deg);animation-direction:reverse}
+.security-node{position:absolute;padding:8px 11px;border:1px solid var(--line);background:color-mix(in srgb,var(--panel) 88%,transparent);border-radius:9px;color:var(--cyan);font:700 9px/1.35 monospace;text-align:center;box-shadow:0 8px 25px rgba(0,0,0,.22);animation:nodeFloat 3.5s ease-in-out infinite}
+.n1{top:30px;left:5px}.n2{top:75px;right:-5px;animation-delay:.5s}.n3{bottom:62px;left:10px;animation-delay:1s}.n4{bottom:25px;right:10px;animation-delay:1.5s}
+@keyframes shieldFloat{50%{transform:translateY(-9px)}}@keyframes ringSpin{to{transform:rotate(360deg)}}@keyframes shieldPulse{50%{filter:drop-shadow(0 0 38px rgba(79,255,225,.65))}}@keyframes shieldScan{0%,100%{top:50px;opacity:.2}50%{top:155px;opacity:1}}@keyframes nodeFloat{50%{transform:translateY(-5px)}}
+
+
+@media(max-width:850px){
+  .security-visual{width:360px;height:390px;transform:scale(.88);margin:-5px auto 0}
+  .shield-main{width:145px;height:178px}
+  .shield-halo.halo-a{width:250px;height:250px}.shield-halo.halo-b{width:210px;height:315px}
+  .visual-label{min-width:96px;padding:7px 8px;font-size:7.5px}
+  .label-a{top:36px;left:0}.label-b{top:36px;right:0}
+  .label-c{bottom:31px;left:0}.label-d{bottom:31px;right:0}
+}
+@media(max-width:500px){
+  .security-visual{width:340px;height:350px;transform:scale(.80);margin:-18px auto -8px}
+  .visual-label{min-width:91px;font-size:7px;padding:7px 6px}
+}
+
+@media(max-width:850px){.security-visual{transform:scale(.82);margin:-20px auto}.links{display:none}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:330px}.cards{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(2,1fr)}.contact{display:block}}
+@media(max-width:500px){.security-visual{transform:scale(.68);margin:-45px auto}.tool-grid{grid-template-columns:1fr}.hero-art{min-height:280px}.orb{width:250px;height:250px}.robot{font-size:115px}.scan{width:230px}}
+.bot-status{position:absolute;bottom:10px;color:var(--accent);font:700 10px ui-monospace,monospace;letter-spacing:.12em;z-index:4}}
+
+
+
+
+
+
+@media(max-width:850px){
+  .security-visual{width:350px;height:370px;transform:none;margin:0 auto}
+  .shield-main{width:130px;height:160px}
+  .halo-a{width:235px;height:235px}.halo-b{width:190px;height:285px}
+  .visual-label{width:98px;padding:8px 5px;font-size:7px;line-height:1.25}
+  .label-a{top:35px;left:0}.label-b{top:35px;right:0}
+  .label-c{bottom:28px;left:0}.label-d{bottom:28px;right:0}
+  .shield-beam{left:20px;right:20px}
+}
+@media(max-width:500px){
+  .security-visual{width:330px;height:345px}
+  .visual-label{width:88px;font-size:6.7px}
+}
+
+.li-icon{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:3px;border:1px solid currentColor;font:800 10px/1 sans-serif;margin-right:4px}.contact-icon{min-width:120px;text-align:center}
+
+
+@media(max-width:850px){
+  .security-visual{
+    width:350px;
+    height:370px;
+    margin:0 auto;
+    transform:none;
+  }
+  .security-visual .shield-main{
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+  }
+  .security-visual .shield-halo{
+    left:50%;
+    top:50%;
+  }
+}
+@media(max-width:500px){
+  .security-visual{width:330px;height:345px}
+}
+
+
+
+@media(max-width:850px){
+  .security-visual .label-a{top:25px;left:-2px}
+  .security-visual .label-b{top:25px;right:-2px}
+  .security-visual .label-c{top:130px;left:-2px}
+  .security-visual .label-d{top:130px;right:-2px}
+  .security-visual .label-e{bottom:24px;left:-2px}
+  .security-visual .label-f{bottom:24px;right:-2px}
+  .security-visual .label-g{bottom:76px;left:-2px}
+  .security-visual .label-h{bottom:76px;right:-2px}
+}
+
+
+/* Light theme readability */
+body.light, body.light-theme,
+html.light body,
+[data-theme="light"]{
+  --cyan:#087f5b;
+  --green:#087f5b;
+  --accent:#087f5b;
+  --blue:#1769aa;
+  --muted:#4b5563;
+}
+body.light .eyebrow,
+body.light .accent,
+body.light .visual-label,
+body.light .tool-tag,
+body.light .topic,
+body.light .sectionTag,
+body.light .skill-title,
+html.light body .eyebrow,
+html.light body .accent,
+html.light body .visual-label{
+  color:#087f5b !important;
+}
+body.light .shield-main{
+  background:linear-gradient(145deg,#087f5b,#1769aa);
+}
+body.light .shield-beam{
+  background:#087f5b;
+  box-shadow:0 0 12px rgba(8,127,91,.45);
+}
+
+
+/* Resume alignment — centered and responsive on every viewport */
+.resume-container{width:min(1140px,92%);margin:0 auto;padding:0}
+#resume{overflow:hidden}
+#resume .sectionIntro{max-width:760px;color:var(--muted);font-size:18px}
+#resume .resume{width:100%;max-width:900px;margin:30px 0 0;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:26px 28px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,var(--panel),var(--panel2));box-shadow:var(--shadow)}
+#resume .resume .actions{margin:0}
+#resume .resume .btn{white-space:nowrap}
+@media(max-width:850px){
+  #resume{padding:72px 0}
+  .resume-container{width:calc(100% - 40px);margin:0 20px}
+  #resume h2{font-size:42px}
+  #resume .sectionIntro{font-size:17px;line-height:1.55}
+  #resume .resume{margin-top:26px;padding:22px 20px;display:block}
+  #resume .resume .actions{margin-top:0}
+  #resume .resume .btn{display:inline-flex;justify-content:center;width:100%;min-height:52px}
+}
+@media(max-width:500px){
+  .resume-container{width:calc(100% - 32px);margin:0 16px}
+  #resume{padding:64px 0}
+  #resume h2{font-size:38px}
+  #resume .sectionIntro{font-size:16px}
+}
+
+
+@media(max-width:850px){
+  .security-visual{width:350px;height:370px;margin:0 auto}
+  .security-visual .shield-main{left:50%;top:50%;transform:translate(-50%,-50%)}
+  .security-visual .shield-halo{left:50%;top:50%;transform:translate(-50%,-50%)}
+  .security-visual .visual-label{width:96px;min-width:96px;padding:8px 5px;font-size:7px}
+}
+@media(max-width:500px){
+  .security-visual{width:330px;height:345px}
+  .security-visual .visual-label{width:88px;min-width:88px;font-size:6.6px}
+}
+
+
+/* SHIELD ONLY — preserves all other portfolio animations */
+.security-visual{position:relative;width:520px;height:430px;flex:none;margin:0 auto}
+.shield-main{position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);width:175px;height:215px;clip-path:polygon(50% 0,92% 15%,90% 60%,76% 82%,50% 100%,24% 82%,10% 60%,8% 15%);background:linear-gradient(145deg,var(--cyan),var(--blue));filter:drop-shadow(0 0 28px rgba(94,234,212,.4));animation:shieldGlow 3s ease-in-out infinite}
+.shield-inner{position:absolute;inset:5px;clip-path:inherit;background:linear-gradient(145deg,#11283a,#060d17 75%);display:grid;place-items:center}
+.lock-body{width:58px;height:60px;border:3px solid var(--cyan);border-radius:10px;position:relative;box-shadow:0 0 22px rgba(94,234,212,.35)}
+.lock-body:before{content:"";position:absolute;width:26px;height:29px;left:13px;top:-27px;border:3px solid var(--cyan);border-bottom:0;border-radius:17px 17px 0 0}
+.lock-key{position:absolute;width:8px;height:17px;left:22px;top:22px;background:var(--cyan);border-radius:5px;box-shadow:0 0 12px var(--cyan)}
+.shield-halo{position:absolute;z-index:1;left:50%;top:50%;border:1px solid rgba(94,234,212,.20);border-radius:50%;transform:translate(-50%,-50%);pointer-events:none}
+.halo-a{width:310px;height:310px;animation:haloSpinCenter 14s linear infinite}
+.halo-b{width:240px;height:380px;border-style:dashed;animation:haloSpinReverseCenter 11s linear infinite}
+.shield-beam{position:absolute;z-index:4;left:20px;right:20px;height:2px;background:var(--cyan);box-shadow:0 0 15px var(--cyan);animation:shieldBeam 2.4s ease-in-out infinite}
+.visual-label{position:absolute;z-index:10;width:132px;padding:9px 8px;border:1px solid rgba(82,168,255,.28);border-radius:9px;background:var(--panel);color:var(--cyan);font:800 9px/1.3 ui-monospace,SFMono-Regular,monospace;letter-spacing:.05em;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.28);white-space:nowrap}
+.label-a{top:28px;left:0}.label-b{top:28px;right:0}
+.label-c{top:158px;left:0}.label-d{top:158px;right:0}
+.label-e{bottom:28px;left:0}.label-f{bottom:28px;right:0}
+.label-g{bottom:92px;left:0}.label-h{bottom:92px;right:0}
+@keyframes haloSpinCenter{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes haloSpinReverseCenter{from{transform:translate(-50%,-50%) rotate(42deg)}to{transform:translate(-50%,-50%) rotate(-318deg)}}
+@media(max-width:850px){
+  .security-visual{width:350px;height:380px;margin:0 auto}
+  .shield-main{width:140px;height:172px}
+  .halo-a{width:245px;height:245px}.halo-b{width:195px;height:305px}
+  .visual-label{width:100px;padding:8px 5px;font-size:7px}
+  .label-a{top:26px;left:0}.label-b{top:26px;right:0}
+  .label-c{top:137px;left:0}.label-d{top:137px;right:0}
+  .label-e{bottom:26px;left:0}.label-f{bottom:26px;right:0}
+  .label-g{bottom:76px;left:0}.label-h{bottom:76px;right:0}
+}
+@media(max-width:500px){
+  .security-visual{width:330px;height:350px}
+  .shield-main{width:125px;height:155px}
+  .halo-a{width:225px;height:225px}.halo-b{width:180px;height:280px}
+  .visual-label{width:90px;font-size:6.5px}
+  .label-a{top:23px}.label-b{top:23px}.label-c{top:126px}.label-d{top:126px}
+  .label-e{bottom:23px}.label-f{bottom:23px}.label-g{bottom:69px}.label-h{bottom:69px}
+}
+
+
+/* RESUME ALIGNMENT ONLY */
+#resume .resume-container{width:min(1000px,calc(100% - 56px));margin:0 auto}
+#resume .resume{margin-top:28px}
+@media(max-width:850px){
+  #resume .resume-container{width:calc(100% - 40px);margin:0 auto}
+  #resume .resume{padding:22px;display:flex}
+  #resume .resume .actions{width:100%;justify-content:center}
+  #resume .resume .btn{width:100%;max-width:420px}
+}
+@media(max-width:500px){
+  #resume .resume-container{width:calc(100% - 32px);margin:0 auto}
+}
+
+
+/* Shield component only — all other page animations remain unchanged */
+.security-visual{
+  position:relative!important;width:520px!important;height:430px!important;
+  flex:none!important;margin:0 auto!important;display:block!important;
+}
+.cyber-shield-svg{
+  position:absolute;z-index:5;left:50%;top:50%;width:220px;height:260px;
+  transform:translate(-50%,-50%);overflow:visible;
+  animation:cyberShieldFloat 4s ease-in-out infinite;
+}
+.shield-face{
+  fill:rgba(5,15,25,.92);stroke:url(#shieldFill);stroke-width:7;
+  filter:drop-shadow(0 0 14px rgba(94,234,212,.32));
+}
+.shield-glow{
+  fill:none;stroke:var(--accent);stroke-width:12;opacity:.20;
+  filter:url(#shieldGlow);animation:shieldOutlinePulse 2.4s ease-in-out infinite;
+}
+.shield-edge{
+  fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round;
+  stroke-linejoin:round;stroke-dasharray:720;stroke-dashoffset:720;
+  animation:shieldDraw 2.2s ease-out forwards,shieldEdgePulse 2.8s ease-in-out 2.2s infinite;
+}
+.shield-lock rect,.shield-lock path,.shield-lock circle{
+  fill:none;stroke:var(--accent);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;
+}
+.shield-lock rect{fill:rgba(94,234,212,.07)}
+.shield-scan{
+  stroke:var(--accent);stroke-width:3;stroke-linecap:round;
+  filter:drop-shadow(0 0 8px var(--accent));
+  animation:shieldScanLine 2.6s ease-in-out infinite;
+}
+.shield-ring{
+  position:absolute;z-index:1;left:50%;top:50%;border:1px solid rgba(94,234,212,.20);
+  border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);
+}
+.shield-ring-1{width:315px;height:315px;animation:shieldRingSpin 16s linear infinite}
+.shield-ring-2{width:255px;height:355px;border-style:dashed;animation:shieldRingSpinReverse 12s linear infinite}
+.shield-ring-3{width:370px;height:220px;border-color:rgba(96,165,250,.13);animation:shieldRingPulse 4s ease-in-out infinite}
+@keyframes cyberShieldFloat{50%{transform:translate(-50%,-50%) translateY(-8px)}}
+@keyframes shieldDraw{to{stroke-dashoffset:0}}
+@keyframes shieldEdgePulse{50%{filter:drop-shadow(0 0 12px var(--accent));opacity:.72}}
+@keyframes shieldOutlinePulse{50%{opacity:.42}}
+@keyframes shieldScanLine{0%{transform:translateY(-54px);opacity:.08}45%{opacity:1}100%{transform:translateY(54px);opacity:.08}}
+@keyframes shieldRingSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes shieldRingSpinReverse{to{transform:translate(-50%,-50%) rotate(-360deg)}}
+@keyframes shieldRingPulse{50%{transform:translate(-50%,-50%) scale(1.04);opacity:.45}}
+@media(max-width:850px){
+  .security-visual{width:350px!important;height:380px!important;margin:0 auto!important}
+  .cyber-shield-svg{width:165px;height:195px}
+  .shield-ring-1{width:245px;height:245px}.shield-ring-2{width:195px;height:305px}.shield-ring-3{width:290px;height:175px}
+}
+@media(max-width:500px){
+  .security-visual{width:330px!important;height:350px!important}
+  .cyber-shield-svg{width:150px;height:178px}
+  .shield-ring-1{width:225px;height:225px}.shield-ring-2{width:180px;height:280px}.shield-ring-3{width:270px;height:160px}
+}
+
+
+/* FINAL SHIELD LABEL REPAIR — shield area only */
+.security-visual .visual-label{
+  box-sizing:border-box!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:124px!important;
+  min-width:124px!important;
+  height:48px!important;
+  min-height:48px!important;
+  max-height:48px!important;
+  padding:5px 7px!important;
+  margin:0!important;
+  overflow:hidden!important;
+  white-space:normal!important;
+  text-align:center!important;
+  border:1px solid rgba(82,168,255,.42)!important;
+  border-radius:10px!important;
+  background:rgba(8,17,30,.94)!important;
+  color:var(--cyan)!important;
+  font:800 8.5px/1.2 ui-monospace,SFMono-Regular,monospace!important;
+  letter-spacing:.045em!important;
+  box-shadow:0 6px 18px rgba(0,0,0,.22)!important;
+}
+.security-visual .label-a{top:18px!important;left:0!important;right:auto!important;bottom:auto!important}
+.security-visual .label-b{top:18px!important;right:0!important;left:auto!important;bottom:auto!important}
+.security-visual .label-c{top:124px!important;left:0!important;right:auto!important;bottom:auto!important}
+.security-visual .label-d{top:124px!important;right:0!important;left:auto!important;bottom:auto!important}
+.security-visual .label-g{top:230px!important;left:0!important;right:auto!important;bottom:auto!important}
+.security-visual .label-h{top:230px!important;right:0!important;left:auto!important;bottom:auto!important}
+.security-visual .label-e{top:286px!important;left:0!important;right:auto!important;bottom:auto!important}
+.security-visual .label-f{top:286px!important;right:0!important;left:auto!important;bottom:auto!important}
+
+@media(max-width:850px){
+  .security-visual .visual-label{
+    width:88px!important;min-width:88px!important;height:44px!important;min-height:44px!important;max-height:44px!important;
+    padding:4px 5px!important;font-size:6.6px!important;border-radius:9px!important;
+  }
+  .security-visual .label-a{top:16px!important}
+  .security-visual .label-b{top:16px!important}
+  .security-visual .label-c{top:105px!important}
+  .security-visual .label-d{top:105px!important}
+  .security-visual .label-g{top:194px!important}
+  .security-visual .label-h{top:194px!important}
+  .security-visual .label-e{top:283px!important}
+  .security-visual .label-f{top:283px!important}
+}
+@media(max-width:500px){
+  .security-visual .visual-label{
+    width:84px!important;min-width:84px!important;height:42px!important;min-height:42px!important;max-height:42px!important;
+    font-size:6.4px!important;padding:4px!important;
+  }
+  .security-visual .label-a{top:14px!important}
+  .security-visual .label-b{top:14px!important}
+  .security-visual .label-c{top:98px!important}
+  .security-visual .label-d{top:98px!important}
+  .security-visual .label-g{top:182px!important}
+  .security-visual .label-h{top:182px!important}
+  .security-visual .label-e{top:266px!important}
+  .security-visual .label-f{top:266px!important}
+}
+
+</style>
+
+<style>
+/* ONLY: shield topic label borders */
+.security-visual .visual-label{
+  box-sizing:border-box!important;
+  width:132px!important;
+  min-height:46px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border:1px solid rgba(96,165,250,.42)!important;
+  border-radius:12px!important;
+  padding:9px 10px!important;
+  line-height:1.25!important;
+  white-space:normal!important;
+  overflow:visible!important;
+}
+@media(max-width:850px){
+  .security-visual .visual-label{
+    width:100px!important;
+    min-height:58px!important;
+    padding:8px 7px!important;
+    border:1px solid rgba(96,165,250,.48)!important;
+    border-radius:11px!important;
+  }
+}
+@media(max-width:500px){
+  .security-visual .visual-label{
+    width:90px!important;
+    min-height:54px!important;
+    padding:7px 6px!important;
+  }
+}
+</style>
+
+</head>
+<body>
+<nav><div class="container nav"><div class="logo">KARTHIKEYAN<span>.M</span></div><div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#tools">Tools</a><a href="#projects">Work</a><a href="https://drive.google.com/file/d/1rwzdfnDrMR5YFAV1NUi3S83MiOUblWxM/view?usp=drivesdk">Resume</a><a href="#contact">Contact</a></div><button class="toggle" id="theme">☀︎ / ☾</button></div></nav>
+
+<header class="hero"><div class="container hero-grid">
+<div>
+<div class="kicker"><span class="dot"></span> ISC2 Certified in Cybersecurity (CC)</div>
+<h1>Karthikeyan M<br><span class="accent">Security Engineer.</span></h1>
+<div class="typing" id="typing"></div>
+<p class="lead">Security Engineer focused on security operations, endpoint security, incident response, investigation, remediation and RCA.</p>
+<div class="actions"><a class="btn primary" href="#projects">View my work</a><a class="btn" href="tel:+919597723192">☎ Call</a><a class="btn" href="mailto:m.karthik2105@gmail.com">✉ Email</a></div>
+</div>
+<div class="hero-art"><div class="orb"></div>
+<div class="security-visual" aria-label="Cybersecurity protection visual">
+  <div class="shield-ring shield-ring-1"></div>
+  <div class="shield-ring shield-ring-2"></div>
+  <div class="shield-ring shield-ring-3"></div>
+
+  <svg class="cyber-shield-svg" viewBox="0 0 240 280" role="img" aria-label="Cybersecurity shield">
+    <defs>
+      <linearGradient id="shieldFill" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="var(--accent)"/>
+        <stop offset="100%" stop-color="var(--accent2)"/>
+      </linearGradient>
+      <filter id="shieldGlow">
+        <feGaussianBlur stdDeviation="5" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <path class="shield-glow" d="M120 14 L211 48 V126 C211 190 175 235 120 263 C65 235 29 190 29 126 V48 Z"/>
+    <path class="shield-face" d="M120 14 L211 48 V126 C211 190 175 235 120 263 C65 235 29 190 29 126 V48 Z"/>
+    <path class="shield-edge" d="M120 14 L211 48 V126 C211 190 175 235 120 263 C65 235 29 190 29 126 V48 Z"/>
+    <g class="shield-lock">
+      <rect x="83" y="126" width="74" height="67" rx="12"/>
+      <path d="M101 126 V105 C101 84 139 84 139 105 V126"/>
+      <circle cx="120" cy="157" r="7"/>
+      <path d="M120 164 V177"/>
+    </g>
+    <line class="shield-scan" x1="50" y1="145" x2="190" y2="145"/>
+  </svg>
+
+  <div class="visual-label label-a">THREAT<br>DETECTION</div>
+  <div class="visual-label label-b">ENDPOINT<br>PROTECTION</div>
+  <div class="visual-label label-c">INCIDENT<br>RESPONSE</div>
+  <div class="visual-label label-d">SECURITY<br>OPERATIONS</div>
+  <div class="visual-label label-e">MALWARE<br>ANALYSIS</div>
+  <div class="visual-label label-f">LOG<br>ANALYSIS</div>
+  <div class="visual-label label-g">RCA &<br>REMEDIATION</div>
+  <div class="visual-label label-h">SECURITY<br>MONITORING</div>
+</div><div class="scan"></div>
+</div>
+</div></header>
+
+
+<section class="reveal" id="summary"><div class="container"><div class="section-head"><div class="eyebrow">01 — Professional Summary</div><h2>Security operations focused.</h2><p>Cybersecurity-focused System Engineer experienced in security operations, SOC monitoring, Sophos EDR/MDR, incident investigation and response, endpoint security, vulnerability assessment, log analysis, threat analysis, root cause analysis, and remediation. Skilled in Microsoft 365 and Microsoft Entra ID administration, MFA operations, security troubleshooting, incident escalation, stakeholder coordination, and documentation.</p></div></div></section>
+<section id="about" class="reveal"><div class="container"><div class="section-head"><div class="eyebrow">01 — About</div><h2>Hands-on security operations, grounded in evidence.</h2><p>My cybersecurity journey combines an internship focused on learning and practicing security fundamentals and web application penetration testing with hands-on security operations experience in my current role.</p></div><div class="cards"><div class="card"><h3>Security Operations</h3><p>SOC monitoring, alert triage, threat detection, log analysis, incident response, investigation, escalation, RCA and remediation.</p></div><div class="card"><h3>Endpoint & Identity</h3><p>Sophos Central/EDR/MDR, endpoint protection, malware and IOC analysis, Active Directory, Group Policy, Microsoft 365 and Entra ID.</p></div><div class="card"><h3>Web Security</h3><p>During internship: OWASP Top 10, web application testing, vulnerability assessment and security findings using Burp Suite and related tools.</p></div></div></div></section>
+
+<section id="experience" class="reveal"><div class="container"><div class="section-head"><div class="eyebrow">02 — Experience</div><h2>From learning security to operating security.</h2></div><div class="timeline">
+<div class="job"><div class="date">JUL 2025 — PRESENT · COIMBATORE</div><h3>System Engineer · KG Invicta Services</h3><p>Hands-on security operations and enterprise security administration.</p><ul><li>Performed security operations using Sophos EDR/MDR: alert monitoring, triage, investigation, log analysis and incident response.</li><li>Investigated 4,000+ weekly security detections and reduced recurring detections to fewer than 100 through monitoring and remediation.</li><li>Investigated compromised accounts, unauthorized access, malware, phishing, suspicious activity and endpoint anomalies.</li><li>Escalated confirmed threats with investigation findings and supported remediation.</li><li>Managed Sophos Central, Windows Server, Active Directory, Group Policy, patch validation and endpoint hardening.</li><li>Administered Microsoft 365 and Entra ID: accounts, licensing, MFA, authentication, email and mail forwarding.</li><li>Analyzed Windows Event Logs and ManageEngine ADAudit Plus audit logs for authentication events, account activity, access anomalies and security incidents.</li><li>Coordinated with MDR and internal teams and prepared incident reports, remediation records and knowledge-base articles.</li><li>Configured and deployed 100+ enterprise endpoints and supported endpoint/security troubleshooting.</li></ul></div>
+<div class="job"><div class="date">AUG 2024 — JUL 2025 · SALEM</div><h3>Cybersecurity Analyst Trainee · ThinkInfo Expert Solutions</h3><p>Cybersecurity internship focused on learning, practicing and building foundational security knowledge.</p><ul><li>Learned and practiced cybersecurity fundamentals including networking, Linux, servers and core security concepts.</li><li>Tested web applications for OWASP Top 10 vulnerabilities including SQL Injection, XSS and IDOR.</li><li>Conducted vulnerability assessments using Burp Suite, Nessus, Nmap, Netsparker, DirBuster and Dirb.</li><li>Identified misconfigurations, outdated components and authentication weaknesses.</li><li>Documented security findings and supported remediation.</li><li>Conducted phishing simulations and security awareness testing.</li></ul></div>
+</div></div></section>
+
+<section id="tools" class="reveal"><div class="container"><div class="section-head"><div class="eyebrow">03 — Tools</div><h2>Security tools I work with.</h2><p></p></div>
+<div class="tool-grid">
+<div class="card tool"><span class="tool-icon">🛡️</span><h3>Sophos Central</h3><small>Endpoint security · EDR/MDR · detections · policies · remediation</small></div>
+<div class="card tool"><span class="tool-icon">🧪</span><h3>VirusTotal</h3><small>IOC/file/URL intelligence and threat analysis</small></div>
+<div class="card tool"><span class="tool-icon">🔬</span><h3>ANY.RUN</h3><small>Interactive malware and suspicious-file analysis</small></div>
+<div class="card tool"><span class="tool-icon">📋</span><h3>ManageEngine ADAudit Plus</h3><small>AD and Windows audit-log investigation</small></div>
+<div class="card tool"><span class="tool-icon">🕷️</span><h3>Burp Suite</h3><small>Web application security testing</small></div>
+<div class="card tool"><span class="tool-icon">🐧</span><h3>Kali Linux</h3><small>Security testing environment and reconnaissance tooling</small></div>
+<div class="card tool"><span class="tool-icon">🌐</span><h3>Nmap</h3><small>Network discovery and vulnerability assessment</small></div>
+<div class="card tool"><span class="tool-icon">💥</span><h3>Nessus / Netsparker</h3><small>Vulnerability assessment and web security testing</small></div>
+<div class="card tool"><span class="tool-icon">🔎</span><h3>DirBuster / Dirb</h3><small>Web content and directory discovery</small></div>
+<div class="card tool"><span class="tool-icon">⚙️</span><h3>Metasploit</h3><small>Security testing and exploitation framework exposure</small></div>
+</div></div></section>
+
+<section id="projects" class="reveal"><div class="container"><div class="section-head"><div class="eyebrow">04 — Selected Work</div><h2>Security work & investigations.</h2></div><div class="projects">
+<div class="card project"><div class="num">01</div><div><h3>Security Detection Investigation & Response</h3><p>Alert triage, endpoint investigation, log analysis, threat validation, escalation, remediation and final incident status.</p><span class="tag">SOC</span><span class="tag">EDR/MDR</span><span class="tag">Incident Response</span></div></div>
+<div class="card project"><div class="num">02</div><div><h3>Root Cause Analysis & Reporting</h3><p>Translate investigation evidence into RCA findings, remediation records and clear stakeholder-facing incident reports.</p><span class="tag">RCA</span><span class="tag">Documentation</span></div></div>
+<div class="card project"><div class="num">03</div><div><h3>Endpoint & Identity Security Operations</h3><p>Sophos endpoint controls plus Active Directory, Entra ID, MFA, Windows Event Logs and ADAudit Plus analysis.</p><span class="tag">Endpoint Security</span><span class="tag">IAM</span><span class="tag">Windows</span></div></div>
+<div class="card project"><div class="num">04</div><div><h3>Web Application Security Testing</h3><p>Internship/practice exposure to OWASP Top 10, SQL Injection, XSS, IDOR and vulnerability assessment using Burp Suite and related tools.</p><span class="tag">OWASP</span><span class="tag">Burp Suite</span><span class="tag">Nmap</span></div></div>
+</div></div></section>
+
+<section class="reveal"><div class="container"><div class="section-head"><div class="eyebrow">05 — Skills</div><h2>Technical capabilities</h2></div><div class="skills">
+<span class="skill">Security Operations</span><span class="skill">SOC Monitoring</span><span class="skill">Alert Triage</span><span class="skill">Threat Detection</span><span class="skill">Log Analysis</span><span class="skill">Incident Response</span><span class="skill">Incident Investigation</span><span class="skill">Root Cause Analysis</span><span class="skill">Remediation</span><span class="skill">Sophos EDR/MDR</span><span class="skill">Endpoint Hardening</span><span class="skill">IOC Analysis</span><span class="skill">Active Directory</span><span class="skill">Microsoft Entra ID</span><span class="skill">Microsoft 365</span><span class="skill">MFA Administration</span><span class="skill">Windows Server</span><span class="skill">Patch Management</span><span class="skill">OWASP Top 10</span><span class="skill">Burp Suite</span><span class="skill">Nmap</span><span class="skill">Kali Linux</span><span class="skill">Python</span><span class="skill">Security Documentation</span>
+</div></div></section>
+
+<section class="reveal"><div class="container"><div class="cards"><div class="card"><h3>Education</h3><p><strong>B.Tech — Artificial Intelligence & Data Science</strong><br>Muthayammal Engineering College · 2021–2025</p></div><div class="card"><h3>Certifications</h3><p><a href="https://www.linkedin.com/safety/go/?url=https%3A%2F%2Fwww%2Ecredly%2Ecom%2Fbadges%2Fd9e852c2-e4c5-415b-a678-c9571e3a33d4%2Fpublic_url&urlhash=pA64&mt=aVC1UaG7iWT9_dxqXB3jz2EKiRBFE7lQLC9jxf2VvfbPgD1EYe5Lqn3C0n48_Yk6VNGbiH4w9jgBUQDodTq2zJfTU7Po&isSdui=true" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-weight:800">ISC2 Certified in Cybersecurity (CC) — Verify Badge ↗</a><br>Python Certification — GUVI<br>Introduction to Cyber Security Workshop — KSR Institute of Technology</p></div><div class="card"><h3>Projects</h3><p>Message Sanitizer for Spam Filtering — TF-IDF & Logistic Regression<br><br>Face Detection Attendance System</p></div></div></div></section>
+
+<section id="resume" class="reveal">
+<div class="container resume-container">
+  <div class="eyebrow">06 — RESUME</div>
+  <h2>My resume</h2>
+  <p class="sectionIntro">Look into my resume below to explore my experience, skills and cybersecurity background.</p>
+  <div class="resume">
+    <div class="actions">
+      <a class="btn primary" href="https://drive.google.com/file/d/1rwzdfnDrMR5YFAV1NUi3S83MiOUblWxM/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">↗ View My Resume</a>
+    </div>
+  </div>
+</div>
+</section>
+<section id="contact" class="reveal"><div class="container"><div class="contact"><div><div class="eyebrow">07 — Contact</div><h2>Let's connect.</h2><p>Open to cybersecurity opportunities in SOC operations, cybersecurity analysis, endpoint security and security operations.</p></div><div class="contact-links"><a class="btn primary contact-icon" href="mailto:m.karthik2105@gmail.com" aria-label="Email me">✉ Email</a><a class="btn contact-icon" href="tel:+919597723192" aria-label="Call me">☎ Mobile</a><a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/karthikeyan-m-282929240"><span class="li-icon">in</span> LinkedIn</a></div></div></div></section>
+<footer>© 2026 Karthikeyan M · Security Engineer</footer>
+<script>
+const roles=["Security Operations","SOC Monitoring & Incident Response","Endpoint Security & EDR/MDR","Investigation • RCA • Remediation"];
+let i=0,j=0,del=false;
+function type(){const el=document.getElementById("typing"),word=roles[i];el.textContent=word.slice(0,j)+(j<word.length?"▌":"");if(!del){j++;if(j>word.length+7){del=true}}else{j--;if(j===0){del=false;i=(i+1)%roles.length}}setTimeout(type,del?45:75)}type();
+document.getElementById("theme").onclick=()=>{document.body.classList.toggle("light");localStorage.setItem("theme",document.body.classList.contains("light")?"light":"dark")};
+if(localStorage.getItem("theme")==="light")document.body.classList.add("light");
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.12});document.querySelectorAll(".reveal").forEach(e=>obs.observe(e));
+</script>
+</body></html>
